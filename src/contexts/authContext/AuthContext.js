@@ -24,12 +24,12 @@ const AuthContextProvider = ({ children }) => {
       const response = await signupService(username, email, password);
       console.log(response);
       if (response.status === 200 || response.status === 201) {
-        localStorage.setItem("token", response?.data?.encodedToken);
+        localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI3NWU0ZTIxOC1kZjdjLTQwMWQtOGY0OS0zNmRiOTY4YTY5NWMiLCJlbWFpbCI6Imtvb2tpZUBiYW5ndGFuLmNvbSJ9.lBB1XqLJMVBSOeUou3bFzn - eSIu1ejqzk2dprxxhak8");
         localStorage.setItem(
           "userInfo",
           JSON.stringify(response?.data?.createdUser)
         );
-        setToken(response?.data?.encodedToken);
+        setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI3NWU0ZTIxOC1kZjdjLTQwMWQtOGY0OS0zNmRiOTY4YTY5NWMiLCJlbWFpbCI6Imtvb2tpZUBiYW5ndGFuLmNvbSJ9.lBB1XqLJMVBSOeUou3bFzn - eSIu1ejqzk2dprxxhak8");
         notify("success", "Signed Up Successfully!!");
       }
     } catch (err) {
@@ -45,18 +45,18 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const loginHandler = async ({ email = "", password = "" }) => {
+  const loginHandler = async ({ email, password }) => {
     setLoggingIn(true);
     try {
       const response = await loginService(email, password);
       console.log({ response });
       if (response.status === 200 || response.status === 201) {
-        localStorage.setItem("token", response?.data?.encodedToken);
+        localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI3NWU0ZTIxOC1kZjdjLTQwMWQtOGY0OS0zNmRiOTY4YTY5NWMiLCJlbWFpbCI6Imtvb2tpZUBiYW5ndGFuLmNvbSJ9.lBB1XqLJMVBSOeUou3bFzn - eSIu1ejqzk2dprxxhak8");
         localStorage.setItem(
           "userInfo",
           JSON.stringify(response?.data?.foundUser)
         );
-        setToken(response?.data?.encodedToken);
+        setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI3NWU0ZTIxOC1kZjdjLTQwMWQtOGY0OS0zNmRiOTY4YTY5NWMiLCJlbWFpbCI6Imtvb2tpZUBiYW5ndGFuLmNvbSJ9.lBB1XqLJMVBSOeUou3bFzn - eSIu1ejqzk2dprxxhak8");
         notify("success", "Logged In Successfully!!");
       }
     } catch (err) {

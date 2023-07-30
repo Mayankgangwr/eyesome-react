@@ -63,7 +63,7 @@ const ProductListing = () => {
             />
           </header>
           <section className="py-3 flex flex-col md:flex-row gap-2 justify-between">
-            <h1 className="text-2xl font-bold">Glasses for You!</h1>
+            <h1 className="text-2xl font-bold">Electronice Products for You!</h1>
             <div className="flex items-center gap-2">
               <Filters
                 isFilterOpen={isFilterOpen}
@@ -71,9 +71,8 @@ const ProductListing = () => {
               />
               <SortBy />
               <button
-                className={`flex py-1 px-2 rounded-md shadow-md items-center  gap-1 hover:bg-[--primary-text-color] hover:text-white hover:shadow-lg ${
-                  isFilterOpen ? "bg-[--primary-text-color] text-white" : ""
-                }`}
+                className={`flex py-1 px-2 rounded-md shadow-md items-center  gap-1 hover:bg-[--primary-text-color] hover:text-white hover:shadow-lg ${isFilterOpen ? "bg-[--primary-text-color] text-white" : ""
+                  }`}
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
               >
                 <BiFilter className="text-lg" />
@@ -94,9 +93,8 @@ const ProductListing = () => {
             </p>
           )}
           <button
-            className={` fixed bottom-10 bg-gray-800 right-2 p-2 rounded-full text-xl shadow-2xl transition-all delay-100 ease-in-out ${
-              showScrollArrow ? "block" : "hidden"
-            }`}
+            className={` fixed bottom-10 bg-gray-800 right-2 p-2 rounded-full text-xl shadow-2xl transition-all delay-100 ease-in-out ${showScrollArrow ? "block" : "hidden"
+              }`}
             onClick={scrollToTop}
           >
             <MdKeyboardArrowUp className=" text-white" />

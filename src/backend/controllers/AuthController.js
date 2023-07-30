@@ -1,6 +1,7 @@
 import { v4 as uuid } from "uuid";
 import { Response } from "miragejs";
 import { formatDate } from "../utils/authUtils";
+import commerce from "../../lib/Commerce";
 const sign = require("jwt-encode");
 /**
  * All the routes related to Auth are present here.
@@ -61,6 +62,12 @@ export const signupHandler = function (schema, request) {
 export const loginHandler = function (schema, request) {
   const { email, password } = JSON.parse(request.requestBody);
   try {
+    debugger;
+    commerce.products.list().then((products) => {
+      const data = products.data;
+      console.log(data);
+    });
+
     const foundUser = schema.users.findBy({ email });
     if (!foundUser) {
       return new Response(
@@ -70,10 +77,7 @@ export const loginHandler = function (schema, request) {
       );
     }
     if (password === foundUser.password) {
-      const encodedToken = sign(
-        { _id: foundUser._id, email },
-        process.env.REACT_APP_JWT_SECRET
-      );
+      const encodedToken = uuid();
       foundUser.password = undefined;
       return new Response(200, {}, { foundUser, encodedToken });
     }

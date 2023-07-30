@@ -51,15 +51,14 @@ const Search = () => {
     <>
       <form
         onSubmit={submitHandler}
-        className={`flex items-center bg-black/[0.075] px-3 ${
-          search && showList ? "rounded-t-md" : "rounded-full"
-        } text-sm transition`}
+        className={`flex items-center bg-black/[0.075] px-3 ${search && showList ? "rounded-t-md" : "rounded-full"
+          } text-sm transition`}
       >
         <input
           className="w-full py-2 px-3 bg-transparent focus:outline-none"
           type="search"
           value={search}
-          placeholder="Search Glasses"
+          placeholder="Search Products"
           onChange={changeHandler}
         />
         <CiSearch />
